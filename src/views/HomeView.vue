@@ -1,8 +1,16 @@
 <script>
+import Modal from '../components/Modal.vue'
+
 export default {
+    components: {
+    Modal
+    },
     data() {
         return {
             adv: [],
+            isOpen: false,
+            title: '',
+            text: ''
         };
     },
     methods: {
@@ -13,6 +21,16 @@ export default {
                 this.adv = data;
             });
         },
+        openModal(title, text) {
+        this.isOpen = true;
+        this.title = title;
+        this.text = text;
+      },
+      closeModal() {
+        this.isOpen = false;
+        this.title = '';
+        this.text = '';
+      }
     },
     mounted(){
         this.getAdvice("https://api.adviceslip.com/advice");
@@ -23,8 +41,10 @@ export default {
 <template>
     <main>
 
-    
-    <table>
+        <button @click="openModal">Abrir Modal</button>
+        <div class="modal" v-if="isOpen">
+      <div class="modal-content">
+        <table>
     <tr>
     <th>Advice</th>
     </tr>
@@ -32,5 +52,14 @@ export default {
     <td>{{ conselho.advice }}</td>
     </tr>
     </table>
+        <button @click="closeModal">Fechar</button>
+        <Modal :isOpen="isModalOpen" @closeModal="closeModal" />
+
+      </div>
+    </div>
+
+
+    
+    
     </main>
 </template>

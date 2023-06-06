@@ -1,12 +1,4 @@
-<template>
-    <div class="modal" v-if="isOpen">
-      <div class="modal-content">
-        <h2>{{ title }}</h2>
-        <p>{{ text }}</p>
-        <button @click="closeModal">Fechar</button>
-      </div>
-    </div>
-  </template>
+
   
   <script>
   export default {
@@ -31,6 +23,16 @@
     }
   };
   </script>
+  
+  <template>
+    <div class="modal" v-if="isOpen">
+      <div class="modal-content">
+        <h2>{{ title }}</h2>
+        <p>{{ text }}</p>
+        <button @click="closeModal">Fechar</button>
+      </div>
+    </div>
+  </template>
   
   <style>
   .modal {
