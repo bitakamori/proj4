@@ -29,7 +29,6 @@
       <div class="modal-content">
         <h2>{{ title }}</h2>
         <p>{{ text }}</p>
-        <button @click="closeModal">Fechar</button>
       </div>
     </div>
   </template>
@@ -48,7 +47,9 @@
   }
   
   .modal-content {
-    background-color: white;
+    background-color: black;
+    color: blueviolet;
+    opacity: 80%;
     padding: 20px;
     border-radius: 8px;
   }
