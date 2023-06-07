@@ -134,10 +134,9 @@ width: 100vw;
 height: 100vh;
 overflow: hidden;
 
-background-image: url("https://i.pinimg.com/564x/40/43/3d/40433d9463f38b56d49c70023ef4bac9.jpg");
+background-image: url("/public/fundo.jpeg");
   background-repeat: no-repeat;
-  background-size: 30%;
-  background-position: center;
+  background-size: 100%;
   z-index: 1%;
 }
 
