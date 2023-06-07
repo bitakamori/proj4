@@ -1,6 +1,4 @@
-
-  
-  <script>
+<script>
   export default {
     data() {
       return {
@@ -49,8 +47,9 @@
   .modal-content {
     background-color: black;
     color: blueviolet;
+    font-size: 40px;
     opacity: 80%;
-    padding: 20px;
+    padding: 50px;
     border-radius: 8px;
   }
   
