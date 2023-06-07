@@ -18,7 +18,7 @@ export default {
             if (data.slips && data.slips.length > 0) {
             this.advice = data.slips[0].advice;
           } else {
-            this.advice = 'Today everything is gonna be alright';
+            this.advice = 'Everything is gonna be alright';
           }
         })
         .catch((error) => {
