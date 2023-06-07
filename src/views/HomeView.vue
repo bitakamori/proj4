@@ -134,7 +134,7 @@ width: 100vw;
 height: 100vh;
 overflow: hidden;
 
-background-image: url("fundo.jpeg");
+background-image: url("/public/fundo.jpeg");
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: 1%;
