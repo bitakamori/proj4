@@ -133,7 +133,7 @@ width: 100vw;
 height: 100vh;
 overflow: hidden;
 
-background-image: url("fundo.jpeg");
+background-image: url("https://github.com/bitakamori/proj4/blob/estiliza%C3%A7%C3%A3ohome/public/fundo.jpeg?raw=true");
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: 1%;
