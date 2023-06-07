@@ -37,9 +37,6 @@ export default {
         // A variável cards está sendo definida de forma global, então poderemos acessar ela dps no html pra iterar sobre ela e renderizar as propriedades dela
 
         this.cards = responseData;
-        responseData.forEach((card) => {
-          this.cards.push(card);
-        });
         // Deixei um for aqui pra vc comparar com o forEach
         // for (let i =0; i < this.cards.length; i++) ... this.cards[i]
       } catch (error) {
