@@ -1,6 +1,7 @@
 <script>
 import Modal from "../components/Modal.vue";
 
+
 export default {
   components: {
     Modal,
@@ -80,6 +81,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 svg {
   display: block;
@@ -134,6 +136,7 @@ main {
   z-index: 1%;
 }
 
+
 #tip {
   font-family: "Gloria Hallelujah", cursive;
 }
@@ -145,7 +148,6 @@ main {
   'GRAD' 0,
   'opsz' 48
 }
-
 #button1 {
   background: transparent;
   border: none;

@@ -1,15 +1,24 @@
 <script>
 
+import Loader from '../components/Loader.vue';
+
 export default {
   data() {
     return {
       // Inicializando lista de cards que vc vai utilizar
       cards: [],
+      loading: false
+    }
+    
+  },
+  components: {
+    Loader
     };
   },
   methods: {
     async getCards() {
       try {
+        this.loading = true
         // dando fetch na api, que é, buscando um dado de um endpoint
         // Nesse caso, seguindo a documentação da api estamos pegando 3 random cards
         let response = await fetch(
@@ -36,6 +45,11 @@ export default {
       } catch (error) {
         console.error(error);
       }
+
+      this.loading = false
+    }
+  }
+}
     },
   },
 };
@@ -46,7 +60,7 @@ export default {
   </div>
 
   <div class="about">
-    <button @click="getCards">Carta</button>
+    <button class="image-button" @click="getCards">Take your luck</button>
     <!-- <p> {{ responseData }}</p> -->
 
     <table>
@@ -60,6 +74,18 @@ export default {
         <!-- a key é obrigatória qnd iteramos sobre uma lista, ela é apenas o identificador do item que vc ta iterando -->
         <!-- Como card vem da resposta da api podemos acessar as propriedades dela, so precisamos saber qm são essas propriedades -->
         <!-- Fica facil saber certingo quais sao as propriedades uma vez que a gente deu console log no cards -->
+        <td> {{ card.name }}</td>
+        <td>{{ card.meaning_up }}</td>
+        <td>{{ card.meaning_rev }}</td>
+        <td>{{ card.type }}</td>
+      </tr>
+    </table>
+
+    <div v-if="loading">
+      <loader></loader>
+    </div>
+
+  </div>
         <td>{{ name }}</td>
         <td>{{ meaning_up }}</td>
         <td>{{ meaning_rev }}</td>
@@ -75,4 +101,13 @@ export default {
     align-items: center;
   }
 }
+
+.image-button {
+  width: 250px;
+  height: 450px;
+  background-image: url(https://thumbs.dreamstime.com/b/magia-tarot-card-noturno-celestial-com-estrelas-quadro-para-previs%C3%B5es-astrologicas-de-bruxaria-nasce-uma-nova-estrela-vetor-211417547.jpg);
+  background-size: cover;
+  background-position: center;
+}
+</style>
 </style>
