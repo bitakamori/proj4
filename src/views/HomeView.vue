@@ -1,7 +1,6 @@
 <script>
 import Modal from "../components/Modal.vue";
 
-
 export default {
   components: {
     Modal,
@@ -142,11 +141,7 @@ main {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 #button1 {
   background: transparent;

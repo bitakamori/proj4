@@ -13,7 +13,7 @@ export default {
   },
   components: {
     Loader
-    };
+    
   },
   methods: {
     async getCards() {
@@ -49,15 +49,15 @@ export default {
       this.loading = false
     }
   }
-}
-    },
-  },
+
+    
+  
 };
 </script>
 <template>
-  <div>
+  <!-- <div>
     <Card :name="card.name"  :meaning_up="card.meaning_up" :meaning_rev="card.meaning_rev" v-for="card in cards" />
-  </div>
+  </div> -->
 
   <div class="about">
     <button class="image-button" @click="getCards">Take your luck</button>
@@ -74,21 +74,9 @@ export default {
         <!-- a key é obrigatória qnd iteramos sobre uma lista, ela é apenas o identificador do item que vc ta iterando -->
         <!-- Como card vem da resposta da api podemos acessar as propriedades dela, so precisamos saber qm são essas propriedades -->
         <!-- Fica facil saber certingo quais sao as propriedades uma vez que a gente deu console log no cards -->
-        <td> {{ card.name }}</td>
+        <td>{{ card.name }}</td>
         <td>{{ card.meaning_up }}</td>
         <td>{{ card.meaning_rev }}</td>
-        <td>{{ card.type }}</td>
-      </tr>
-    </table>
-
-    <div v-if="loading">
-      <loader></loader>
-    </div>
-
-  </div>
-        <td>{{ name }}</td>
-        <td>{{ meaning_up }}</td>
-        <td>{{ meaning_rev }}</td>
       </tr>
     </table>
   </div>  
@@ -109,5 +97,4 @@ export default {
   background-size: cover;
   background-position: center;
 }
-</style>
 </style>
