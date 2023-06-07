@@ -79,7 +79,8 @@ export default {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 svg {
   display: block;
@@ -134,28 +135,27 @@ main {
   z-index: 1%;
 }
 
+
 #tip {
-  font-family: Satisfy, sans-serif;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
-
 #button1 {
   background: transparent;
   border: none;
   color: red;
-  font-size: 50px;
 }
 
 #button2 {
   background: transparent;
   border: none;
-  color: #8b008b;
+  color: #490f49;
   animation: pulsate 2s infinite;
   position: relative;
-  margin: 17.5% 41.5%;
+  margin: 17.5% 42%;
 
   font-size: 50px;
 
