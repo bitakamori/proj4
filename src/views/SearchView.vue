@@ -34,7 +34,7 @@ export default {
     <input
       type="text"
       v-model="searchQuery"
-      placeholder="Say a word and i give u an advice :)"
+      placeholder="Give me a word and I will guide you"
     />
     <button @click="searchAdvice">Buscar</button>
     <p>{{

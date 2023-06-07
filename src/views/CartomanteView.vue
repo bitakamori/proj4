@@ -1,14 +1,23 @@
 <script>
+
+import Loader from '../components/Loader.vue';
+
 export default {
   data() {
     return {
       // Inicializando lista de cards que vc vai utilizar
-      cards: []
+      cards: [],
+      loading: false
     }
+    
+  },
+  components: {
+    Loader
   },
   methods: {
     async getCards() {
       try {
+        this.loading = true
         // dando fetch na api, que é, buscando um dado de um endpoint
         // Nesse caso, seguindo a documentação da api estamos pegando 3 random cards
         let response = await fetch('https://tarot-api-3hv5.onrender.com/api/v1/cards/random?n=3')
@@ -31,13 +40,15 @@ export default {
       } catch (error) {
         console.error(error)
       }
+
+      this.loading = false
     }
   }
 }
 </script>
 <template>
   <div class="about">
-    <button class="image-button" @click="getCards">Click here!!</button>
+    <button class="image-button" @click="getCards">Take your luck</button>
     <!-- <p> {{ responseData }}</p> -->
 
     <table>
@@ -58,6 +69,11 @@ export default {
         <td>{{ card.type }}</td>
       </tr>
     </table>
+
+    <div v-if="loading">
+      <loader></loader>
+    </div>
+
   </div>
 </template>
 <style>
@@ -75,6 +91,5 @@ export default {
   background-image: url(https://thumbs.dreamstime.com/b/magia-tarot-card-noturno-celestial-com-estrelas-quadro-para-previs%C3%B5es-astrologicas-de-bruxaria-nasce-uma-nova-estrela-vetor-211417547.jpg);
   background-size: cover;
   background-position: center;
-  /* Outros estilos opcionais */
 }
 </style>
