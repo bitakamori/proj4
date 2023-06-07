@@ -133,9 +133,10 @@ width: 100vw;
 height: 100vh;
 overflow: hidden;
 
-background-image: url("https://github.com/bitakamori/proj4/blob/estiliza%C3%A7%C3%A3ohome/public/fundo.jpeg?raw=true");
+background-image: url("https://i.pinimg.com/564x/40/43/3d/40433d9463f38b56d49c70023ef4bac9.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 30%;
+  background-position: center;
   z-index: 1%;
 }
 
