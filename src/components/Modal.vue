@@ -1,6 +1,4 @@
-
-  
-  <script>
+<script>
   export default {
     data() {
       return {
@@ -29,7 +27,7 @@
       <div class="modal-content">
         <h2>{{ title }}</h2>
         <p>{{ text }}</p>
-        <button @click="closeModal">Fechar</button>
+        
       </div>
     </div>
   </template>
@@ -48,8 +46,11 @@
   }
   
   .modal-content {
-    background-color: white;
-    padding: 20px;
+    background-color: black;
+    color: blueviolet;
+    font-size: 40px;
+    opacity: 80%;
+    padding: 50px;
     border-radius: 8px;
   }
   
