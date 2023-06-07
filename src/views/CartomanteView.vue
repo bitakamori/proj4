@@ -13,7 +13,7 @@ export default {
   },
   components: {
     Loader
-    };
+    
   },
   methods: {
     async getCards() {
@@ -49,9 +49,9 @@ export default {
       this.loading = false
     }
   }
-}
-    },
-  },
+
+    
+  
 };
 </script>
 <template>
