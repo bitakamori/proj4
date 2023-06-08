@@ -1,3 +1,5 @@
+
+
 <script>
 export default {
   data() {
@@ -5,7 +7,7 @@ export default {
       searchQuery: "",
       adviceList: [],
       advice: "",
-      //temOutrosAdvices: false,
+      showTextEffect: false,
     };
   },
   methods: {
@@ -15,11 +17,12 @@ export default {
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
-            if (data.slips && data.slips.length > 0) {
+          if (data.slips && data.slips.length > 0) {
             this.advice = data.slips[0].advice;
           } else {
-            this.advice = 'Everything is gonna be alright';
+            this.advice = "Everything is gonna be alright";
           }
+          this.showTextEffect = true;
         })
         .catch((error) => {
           console.error(error);
@@ -30,18 +33,89 @@ export default {
 </script>
 
 <template>
-  <div>
-    <input
-      type="text"
-      v-model="searchQuery"
-      placeholder="Give me a word and I will guide you"
-    />
-    <button @click="searchAdvice">Buscar</button>
-    <p>{{
-       advice
-      }}</p> 
-    <!-- <button :disabled="!temOutrosAdvices"></button> -->
-  </div>
+  <main>
+    <div>
+      <input
+        type="text"
+        v-model="searchQuery"
+        placeholder="Give me a word and I will look into your future"
+        class="custom-input"
+      />
+      <button @click="searchAdvice" class="material-icons">visibility</button>
+
+      <div>
+        <h1 class="text-effect" v-if="showTextEffect">{{ advice }}</h1>
+      </div>
+    </div>
+  </main>
 </template>
 
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.text-effect {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: reveal-text 2s linear forwards;
+  font-family: 'Satisfy', cursive;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-size: 200px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+@keyframes reveal-text {
+  0% {
+    width: 0;
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.custom-input {
+  width: 400px; 
+  padding: 10px; 
+  border: white;
+  border-style: dashed;
+  background-color: #e8e6f3; 
+  font-size: 16px; 
+  color: #000; 
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  background-image: url("https://media.istockphoto.com/id/1347016845/vector/blue-background-with-stars-and-place-for-text-cosmic-blue-banner-with-copy-space-for.jpg?s=612x612&w=0&k=20&c=KOZc8cNMNio03XGHHqb1K8LCQFI9miSdRGY8EsTnT1Q=");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 1%;
+}
+
+
+</style>
 
