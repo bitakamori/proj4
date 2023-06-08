@@ -6,6 +6,10 @@
   </template>
   
   <style>
+
+  .loader{
+    display: flex;
+  }
   
   .l.loader {
   display: flex;
@@ -18,7 +22,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #333;
+  background-color: white;
   margin: 0 10px;
   animation: loader-dot 1.5s infinite ease-in-out;
   animation-delay: calc(0.1s);

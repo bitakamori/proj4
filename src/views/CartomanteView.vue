@@ -52,31 +52,40 @@ export default {
 };
 </script>
 <template>
+  <main>
   <!-- <div>
     <Card :name="card.name"  :meaning_up="card.meaning_up" :meaning_rev="card.meaning_rev" v-for="card in cards" />
   </div> -->
 
-  <div class="about">
-    <button class="image-button" @click="getCards">Take your luck</button>
-    <!-- <p> {{ responseData }}</p> -->
 
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Description up</th>
-        <th>Description rev</th>
-      </tr>
+  <div class="about">
+    <button class="image-button" @click="getCards">Draw a card!!</button>
+    <!-- <p> {{ responseData }}</p> -->
+<div v-if="loading">
+      <loader></loader>
+    </div>
+    <table class="table-content">
+     
       <!-- Essa é a estrutura de for do vue para iterar para cada dado de uma lista -->
-      <tr v-for="card in cards" :key="card.name">
+      <tr v-for="card in cards" :key="card.name" class="tarot">
         <!-- a key é obrigatória qnd iteramos sobre uma lista, ela é apenas o identificador do item que vc ta iterando -->
         <!-- Como card vem da resposta da api podemos acessar as propriedades dela, so precisamos saber qm são essas propriedades -->
         <!-- Fica facil saber certingo quais sao as propriedades uma vez que a gente deu console log no cards -->
-        <td>{{ card.name }}</td>
-        <td>{{ card.meaning_up }}</td>
-        <td>{{ card.meaning_rev }}</td>
+        <div class="card-grid">
+        <td class="card-name">{{ card.name }}</td>
+        <td class="card-up">Atributes: {{ card.meaning_rev }}</td>
+        <td class="card-rev">Description: {{ card.meaning_up }}</td>
+        </div>
+
+ 
+        
       </tr>
     </table>
+
+
+
   </div>  
+</main>
 </template>
 <style>
 @media (min-width: 1024px) {
@@ -87,11 +96,120 @@ export default {
   }
 }
 
+.table-content{
+  display: flex;
+}
+
 .image-button {
   width: 250px;
   height: 450px;
   background-image: url(https://thumbs.dreamstime.com/b/magia-tarot-card-noturno-celestial-com-estrelas-quadro-para-previs%C3%B5es-astrologicas-de-bruxaria-nasce-uma-nova-estrela-vetor-211417547.jpg);
   background-size: cover;
   background-position: center;
+  margin: 0;
+}
+
+.card-name{
+  height: 35px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid white;
+  background-color:khaki;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 10%;
+
+font-family: 'Bebas Neue', cursive;
+font-size: 15px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color:darkorange;
+font-weight: bold;
+text-decoration: none;
+font-style: italic;
+font-variant: normal;
+text-transform: uppercase;
+text-shadow: 2px 2px 4px white
+}
+
+.card-up{
+  min-height: 110px;
+  margin-bottom: 20px;
+  border: 1px solid white;
+  background-color:khaki;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: calc(0.5vw + 0.4vh);
+
+
+
+}
+
+.card-rev{
+  min-height: 255px;
+  margin-bottom: 20px;
+  border: solid 1px white;
+  background-color:khaki;
+  border-radius: 10%;
+  font-size: calc(0.5vw + 0.4vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-grid{
+  width: 250px;
+    height: 450px;
+  border: 1px solid goldenrod;
+  padding: 20px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ text-align: center;
+ background-color: gold;
+ margin-bottom: 5px;
+ 
+}
+
+.about{
+  display: flex;
+flex-wrap: wrap;
+}
+
+.tarot{
+  animation: deslizar 1s;
+
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  background-image: url(https://cdn.steamstatic.com/steamcommunity/public/images/items/447120/f173d53b9c696240fba8c45b6ec735f7bc1ce01a.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 1%;
+}
+
+
+@keyframes deslizar {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
 </style>
