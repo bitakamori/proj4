@@ -1,5 +1,3 @@
-
-
 <script>
 export default {
   data() {
@@ -110,9 +108,9 @@ main {
   height: 100vh;
   overflow: hidden;
 
-  background-image: url("https://media.istockphoto.com/id/1347016845/vector/blue-background-with-stars-and-place-for-text-cosmic-blue-banner-with-copy-space-for.jpg?s=612x612&w=0&k=20&c=KOZc8cNMNio03XGHHqb1K8LCQFI9miSdRGY8EsTnT1Q=");
+  background-image: url("/public/bgsearch1.jpeg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 90%;
   z-index: 1%;
 }
 

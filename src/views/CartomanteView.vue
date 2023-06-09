@@ -63,8 +63,8 @@ export default {
           <!-- Fica facil saber certingo quais sao as propriedades uma vez que a gente deu console log no cards -->
           <div class="card-grid">
             <td class="card-name">{{ card.name }}</td>
-            <td class="card-up">Atributes: {{ card.meaning_rev }}</td>
-            <td class="card-rev">Description: {{ card.meaning_up }}</td>
+            <td class="card-up"> Atributes:<br/> {{ card.meaning_rev }}</td>
+            <td class="card-rev">Description:<br/> {{ card.meaning_up }}</td>
           </div>
         </tr>
       </table>
@@ -152,10 +152,15 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: "Dosis", sans-serif;
   color: #2C2B2E;
   padding: 20px;
 }
+
+/* .title {
+  font-weight: bold;
+} */
 
 .card-rev {
   min-height: 280px;
