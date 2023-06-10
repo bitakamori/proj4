@@ -99,12 +99,6 @@ export default {
 }
 
 .image-button {
-   /* width: 250px; */
-  /* height: 450px; */
-  /* background-image: url(https://thumbs.dreamstime.com/b/magia-tarot-card-noturno-celestial-com-estrelas-quadro-para-previs%C3%B5es-astrologicas-de-bruxaria-nasce-uma-nova-estrela-vetor-211417547.jpg); */
-  /* background-size: cover;
-  background-position: center; */
-  /* margin: 0; */
   font-size: 55px;
   font-family: 'Merriweather', serif;
   color: #DFC897;
@@ -206,8 +200,6 @@ export default {
 main {
   width: 100vw;
   height: 100vh;
-
-  /* background-image: url(https://cdn.steamstatic.com/steamcommunity/public/images/items/447120/f173d53b9c696240fba8c45b6ec735f7bc1ce01a.jpg); */
   background-image: url("/public/celestial1.jpeg");
   background-repeat: no-repeat;
   background-size: 100%;
