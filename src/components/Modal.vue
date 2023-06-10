@@ -46,8 +46,8 @@
   
   .modal-content {
     background-color: black;
-    color: blueviolet;
-    font-size: 40px;
+    color: rgb(98, 10, 180);
+    font-size: 50px;
     opacity: 80%;
     padding: 50px;
     border-radius: 8px;

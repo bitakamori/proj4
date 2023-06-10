@@ -79,8 +79,7 @@ export default {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 svg {
   display: block;
@@ -135,9 +134,12 @@ main {
   z-index: 1%;
 }
 
+h1 {
+  color: rgb(88, 5, 88);
+}
 
 #tip {
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: 'Amatic SC', cursive;
 }
 
 .material-symbols-outlined {
@@ -146,7 +148,9 @@ main {
 #button1 {
   background: transparent;
   border: none;
-  color: red;
+  color: rgb(88, 5, 88);
+  font-size: 3rem;
+  cursor: grab;
 }
 
 #button2 {
@@ -155,22 +159,22 @@ main {
   color: #490f49;
   animation: pulsate 2s infinite;
   position: relative;
-  margin: 17.5% 42%;
+  margin: 17.5% 41.5%;
 
-  font-size: 50px;
-
+ font-size: 50px;
   width: 20rem;
+  cursor: grab;
 }
 
 @keyframes pulsate {
   0% {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   50% {
     transform: scale(1.1);
   }
   100% {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
 }
 
