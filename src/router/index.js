@@ -18,9 +18,9 @@ const router = createRouter({
       component: () => import('../views/CartomanteView.vue')
     },
     {
-      path: '/Search',
+      path: '/search',
       name: 'Search',
-      component: () => import  ('../views/SearchView.vue')
+      component: () => import  ('../views/searchView.vue')
     },
   ]
 })
