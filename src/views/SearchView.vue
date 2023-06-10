@@ -18,7 +18,7 @@ export default {
           if (data.slips && data.slips.length > 0) {
             this.advice = data.slips[0].advice;
           } else {
-            this.advice = "Everything is gonna be alright";
+            this.advice = "Everything is gonna be alright!";
           }
           this.showTextEffect = true;
         })
@@ -33,51 +33,58 @@ export default {
 <template>
   <main>
     <div>
+        <h1 class="text-effect" v-if="showTextEffect">{{ advice }}</h1>
+      </div>
+    <div class="input">
       <input
         type="text"
         v-model="searchQuery"
         placeholder="Give me a word and I will look into your future"
-        class="custom-input"
+        class="custom-input" 
       />
       <button @click="searchAdvice" class="material-icons">visibility</button>
 
-      <div>
-        <h1 class="text-effect" v-if="showTextEffect">{{ advice }}</h1>
-      </div>
     </div>
   </main>
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+.input {
+  width: 28%;
+  background-color: #c7bda3;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 13%;
+}
 
 .text-effect {
-  font-size: 48px;
+  padding: 15px;
+  font-size: 55px;
   font-weight: bold;
   color: white;
-  overflow: hidden;
-  white-space: nowrap;
   animation: reveal-text 2s linear forwards;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Bad Script', cursive;
+  display: flex;
+  text-align: center;
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-size: 200px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
+  font-size: 45px;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
   background: transparent;
   border: none;
   color: white;
+  margin-bottom: 10px;
+
+  cursor: grab;
+
 }
 
 @keyframes reveal-text {
@@ -94,26 +101,43 @@ export default {
 }
 
 .custom-input {
-  width: 400px; 
-  padding: 10px; 
-  border: white;
-  border-style: dashed;
-  background-color: #e8e6f3; 
+  width: 80%; 
+  height: 50px;
+  padding-left: 3px;
+  border: none;
+  background-color: transparent; 
   font-size: 16px; 
-  color: #000; 
+  color: white; 
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.custom-input::placeholder{
+  color: white;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.custom-input:focus {
+  outline: none;
 }
 
 main {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-
-  background-image: url("/public/bgsearch1.jpeg");
+  background-image: url("/public/celestial1.jpeg");
   background-repeat: no-repeat;
-  background-size: 90%;
+  background-size: 100%;
+  background-position: center;
   z-index: 1%;
-}
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 </style>
 
