@@ -11,12 +11,11 @@ export default {
   methods: {
     searchAdvice() {
       const apiUrl = `https://api.adviceslip.com/advice/search/${this.searchQuery}`;
-
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
           if (data.slips && data.slips.length > 0) {
-            this.advice = data.slips[0].advice;
+            this.advice = data.slips[Math.floor(Math.random() * data.slips.length)].advice;
           } else {
             this.advice = "Everything is gonna be alright!";
           }
